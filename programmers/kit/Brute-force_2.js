@@ -52,10 +52,6 @@ function solution(answers) {
 // * 2
 
 function solution2(answers) {
-  const oneNum = Math.floor(one.length / answers.length);
-  const twoNum = Math.floor(two.length / answers.length);
-  const threeNum = Math.floor(three.length / answers.length);
-
   const oneRemain = answers.length % one.length;
   const twoRemain = answers.length % two.length;
   const threeRemain = answers.length % three.length;
