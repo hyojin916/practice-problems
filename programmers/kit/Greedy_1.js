@@ -40,6 +40,7 @@ solution1(5, [2, 4], [1, 3, 5]);
 // 합계: 60.0 / 60.0;
 
 function solution2(n, lost, reserve) {
+  // 1. 체육복을 입을 수 있는 최소의 사람들
   let answer = n - lost.length;
   // *sorting하여 배열이 순회하면서 빌려주지 못하는 경우를 지운다.
   lost.sort();
