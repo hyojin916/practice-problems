@@ -58,3 +58,42 @@ function solution(name) {
 
   return counter;
 }
+
+// 3.
+
+// length-1까지 돌면서 횟수를 더한다.
+// index 0을 기준으로 index 1, index [length-1] 중에 A가 있는지 확인한다.
+// index가 [length-1]인 경우가 아니면 순차적으로 돈다. (length -1 까지)
+// index가 [length-1]인 경우 거꾸로 돌며 (index 1 까지)
+function solution(name) {
+  let answer = 0;
+
+  let lastIdx;
+  let secondIdx;
+  if (name.length > 1) {
+    lastIdx = name.length - 1;
+    secondIdx = 1;
+  }
+
+  if (
+    !!lastIdx &&
+    !!secondIdx &&
+    lastIdx > secondIdx &&
+    name[secondIdx] !== 'A'
+  ) {
+    answer = answer + name.length - 1;
+    for (let i = 0; i < name.length; i++) {
+      answer = answer + alphabetMap.get(name[i]);
+      console.log('for 1:', name[i], alphabetMap.get(name[i]));
+    }
+    return answer;
+  } else {
+    answer = answer + name.length - 1;
+    answer = answer - 1;
+    for (let i = name.length - 1; i > -1; i--) {
+      answer = answer + alphabetMap.get(name[i]);
+      console.log('for 2:', name[i], alphabetMap.get(name[i]));
+    }
+    return answer;
+  }
+}
