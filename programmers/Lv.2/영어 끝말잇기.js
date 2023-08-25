@@ -15,6 +15,7 @@ function solution(n, words) {
     if (i !== 0) {
       const prev = words[i - 1];
       const lastStr = prev.substr(prev.length - 1, 1);
+      // const lastStr = prev.split('').at(-1); // * 리팩토링:  방법 2. Array.at(Number)을 사용하는 방법
       if (
         list.includes(words[i]) ||
         lastStr !== words[i][0] ||
