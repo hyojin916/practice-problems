@@ -4,8 +4,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
 function solution(s) {
-  // if (s.length % 2 !== 0) return 0;
-  if (s.length === 0) return 1;
+  if (s.length % 2) return 0; // * 홀수를 걸러주기
   const arr = s.split('');
   // console.log('arr', arr)
 
@@ -20,6 +19,24 @@ function solution(s) {
   }
   console.log(stack.length);
   return stack.length === 0 ? 1 : 0;
+}
+
+// * ⭐️ Array.prototype.at()을 사용해서 배열의 마지막 인자를 가져오는 방법
+function solution(s) {
+  if (s.length % 2) return 0; // * 홀수를 걸러주기
+  const arr = s.split('');
+  let stack = [];
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    // 문자 배열을 거꾸로 순회
+    if (arr[i] === stack.at(-1)) {
+      // 현재 문자와 stack의 맨 위 문자가 같으면
+      stack.pop(); // stack의 맨 위 문자를 제거
+    } else {
+      stack.push(s[i]); // 다르면 현재 문자를 stack에 추가
+    }
+  }
+  return stack.length === 0 ? 1 : 0; // stack이 비어있으면 1, 아니면 0
 }
 
 // 방법1. 재귀 -> 제거할 수 없을 때까지
