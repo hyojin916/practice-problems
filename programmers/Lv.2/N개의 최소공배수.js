@@ -1,5 +1,7 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/12953
 // 최대공약수함수 - gcd
 // 최대공약수들 - gcdMultipleNumbers
+
 function gcd(x, y) {
   while (y !== 0) {
     let temp = y; // 다음 분모
@@ -24,3 +26,5 @@ function solution(arr) {
   //         let res = arr[0]
   return answer;
 }
+
+module.exports = solution;
