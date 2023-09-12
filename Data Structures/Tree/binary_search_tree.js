@@ -1,3 +1,5 @@
+// * BinarySearchTree, BFS, DFS
+
 class Node {
   constructor(value) {
     this.value = value;
